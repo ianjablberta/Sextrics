@@ -1,7 +1,13 @@
 Sextrics::Application.routes.draw do
-  get "home/index"
 
+  get "home/index"
   root :to => "home#index"
+  
+  match "login", :to=>'login#index', :as => 'login'
+  post "login/login"
+
+  get 'user/dashboard'
+  match "user/:id", :to => 'user#dashboard'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
