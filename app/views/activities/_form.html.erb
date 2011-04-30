@@ -1,7 +1,23 @@
 <%= form_for(@activity) do |f| %>
+  <% if @activity.errors.any? %>
+    <div id="errorExplanation">
+      <h2><%= pluralize(@activity.errors.count, "error") %> prohibited this activity from being saved:</h2>
+      <ul>
+      <% @activity.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :user_id %>
 
   <%= f.label :date_of_activity, 'Date of Activity' %>
   <%= f.text_field :date_of_activity, {:class => 'date'} %>
+  <br />
+
+  <%= f.label :length, 'Length of Activity' %>
+  <%= f.text_field :length %>
   <br />
 
   <%= f.submit %>

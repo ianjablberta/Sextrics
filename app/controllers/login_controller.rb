@@ -11,6 +11,7 @@ class LoginController < ApplicationController
       user.save!
     end
 
-    redirect_to "/user/#{user.id}"
+    session[:user_id] = user.id
+    redirect_to_dashboard
   end
 end
