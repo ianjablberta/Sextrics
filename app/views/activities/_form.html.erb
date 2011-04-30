@@ -1,0 +1,9 @@
+<%= form_for(@activity) do |f| %>
+
+  <%= f.label :date_of_activity, 'Date of Activity' %>
+  <%= f.text_field :date_of_activity, {:class => 'date'} %>
+  <br />
+
+  <%= f.submit %>
+
+<% end %>

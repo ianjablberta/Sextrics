@@ -1,9 +1,5 @@
 Sextrics::Application.routes.draw do
 
-  resources :locations
-
-  resources :positions
-
   resources :activities
 
   get "home/index"
