@@ -4,6 +4,10 @@
 
 <ul>
 <% @user.ten_most_recent_activities.each do |activity| %>
-  <li>On <%= activity.date_of_activity %> you had sex for <%= activity.length %> minutes and did <%= activity.positions.length %> positions.</li>
+  <li>On <%= activity.date_of_activity %> you had sex for <%= activity.length %> minutes and did <%= activity.positions.length %> positions.<ol>
+  <% activity.positions.each do |p| %>
+	<li> <%= p.name %></li>
+  <% end %>
+  </ol></li>
 <% end %>
 </ul>
