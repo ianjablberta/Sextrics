@@ -1,0 +1,23 @@
+.position_tile {
+  float: left;
+  width: 100px;
+  height: 100px;
+  border: solid black 1px;
+  margin: 5px;
+}
+
+#positions {
+  width: 630px;
+}
+
+.clearer {
+ clear: both;
+}
+
+.tile_selected { 
+  background: #777;
+}
+
+.hidden {
+  display: none;
+}

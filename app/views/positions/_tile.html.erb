@@ -1,0 +1,8 @@
+
+<div class="position_tile" id="position_tile_<%=position.id%>">
+  <% if position.image.blank? %>
+    <p><%= position.name %></p>
+  <% else %>
+    image_tag position.image
+  <% end %>
+</div>

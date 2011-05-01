@@ -1,3 +1,5 @@
+<%= javascript_include_tag "activity_entry" %>
+
 <%= form_for(@activity) do |f| %>
   <% if @activity.errors.any? %>
     <div id="errorExplanation">
@@ -20,6 +22,15 @@
   <%= f.text_field :length %>
   <br />
 
+  <div id='positions'>
+    <% @positions.each do |position| %>
+      <%= render :partial => 'positions/tile', :locals => { :position => position } %>
+    <% end %>
+  </div>
+  
+  <div class="clearer" />
+
+  <%= f.collection_select(:position_ids, @positions, :id, :name, {}, {:multiple => true, :class => :hidden}) %>
   <%= f.submit %>
 
 <% end %>

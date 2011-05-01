@@ -1,9 +1,10 @@
 class ActivitiesController < ApplicationController
 
   before_filter :load_user
-
+  
   def new
     @activity = Activity.new({:user_id => @user.id})
+    @positions = Position.find(:all)
   end
 
   def create

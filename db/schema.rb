@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110430204500) do
+ActiveRecord::Schema.define(:version => 20110501014011) do
 
   create_table "activities", :force => true do |t|
     t.date     "date_of_activity"
@@ -18,6 +18,11 @@ ActiveRecord::Schema.define(:version => 20110430204500) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "activities_positions", :id => false, :force => true do |t|
+    t.integer "activity_id"
+    t.integer "position_id"
   end
 
   create_table "locations", :force => true do |t|
