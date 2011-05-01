@@ -1,3 +1,9 @@
 <h2>Welcome to Sextrics, <%= @user.username %></h2>
 
 <%= link_to 'Add an Activity', new_activity_path %>
+
+<ul>
+<% @user.ten_most_recent_activities.each do |activity| %>
+  <li>On <%= activity.date_of_activity %> you had sex for <%= activity.length %> minutes.</li>
+<% end %>
+</ul>
